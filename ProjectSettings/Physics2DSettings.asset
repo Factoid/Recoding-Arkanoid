@@ -4,12 +4,12 @@
 Physics2DSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 4
-  m_Gravity: {x: 0, y: -9.81}
-  m_DefaultMaterial: {fileID: 0}
-  m_VelocityIterations: 8
-  m_PositionIterations: 3
-  m_VelocityThreshold: 1
-  m_MaxLinearCorrection: 0.2
+  m_Gravity: {x: 0, y: 0}
+  m_DefaultMaterial: {fileID: 6200000, guid: 2f6340db4eb0c884382c8dffb136f1b2, type: 2}
+  m_VelocityIterations: 100
+  m_PositionIterations: 100
+  m_VelocityThreshold: 0.0001
+  m_MaxLinearCorrection: 0.0001
   m_MaxAngularCorrection: 8
   m_MaxTranslationSpeed: 100
   m_MaxRotationSpeed: 360
@@ -46,9 +46,9 @@ Physics2DSettings:
   m_AutoSyncTransforms: 0
   m_AlwaysShowColliders: 0
   m_ShowColliderSleep: 1
-  m_ShowColliderContacts: 0
+  m_ShowColliderContacts: 1
   m_ShowColliderAABB: 0
-  m_ContactArrowScale: 0.2
+  m_ContactArrowScale: 0.604
   m_ColliderAwakeColor: {r: 0.5686275, g: 0.95686275, b: 0.54509807, a: 0.7529412}
   m_ColliderAsleepColor: {r: 0.5686275, g: 0.95686275, b: 0.54509807, a: 0.36078432}
   m_ColliderContactColor: {r: 1, g: 0, b: 1, a: 0.6862745}

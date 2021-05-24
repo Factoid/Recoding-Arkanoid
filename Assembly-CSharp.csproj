@@ -65,7 +65,6 @@
   <ItemGroup>
     <Compile Include="Assets\BallLauncher.cs" />
     <Compile Include="Assets\DestroyOnCollision.cs" />
-    <Compile Include="Assets\EnsureVelocity.cs" />
     <Compile Include="Assets\FieldGenerator.cs" />
     <Compile Include="Assets\FireBall.cs" />
     <Compile Include="Assets\LivesManager.cs" />
