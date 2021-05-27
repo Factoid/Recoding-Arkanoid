@@ -1,6 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class LivesEvent : UnityEvent<LivesManager>
+{
+}
 
 public class LivesManager : MonoBehaviour
 {
@@ -8,12 +14,28 @@ public class LivesManager : MonoBehaviour
     private int initialLives;
     private int currentLives;
 
-    public event System.Action LifeLost;
-    public event System.Action GameOver;
+    [SerializeField]
+
+    public int Lives
+    {
+        get { return currentLives; }
+        private set {
+            bool changed = currentLives != value;
+            currentLives = value;
+            if (changed) LivesChanged?.Invoke(this);
+        }
+    }
+
+    [SerializeField]
+    private LivesEvent LivesChanged;
+    [SerializeField]
+    private UnityEvent LifeLost;
+    [SerializeField]
+    private UnityEvent GameOver;
 
     public void LoseLife()
     {
-        currentLives -= 1;
+        Lives -= 1;
         if( currentLives <= 0 )
         {
             GameOver?.Invoke();
@@ -25,12 +47,6 @@ public class LivesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentLives = initialLives;
-    }
-
-    private void OnGUI()
-    {
-        GUILayout.Space(20);
-        GUILayout.Label("Lives = " + currentLives);
+        Lives = initialLives;
     }
 }

@@ -1,6 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class GameObjectEvent : UnityEvent<GameObject>
+{
+
+}
 
 public class FieldGenerator : MonoBehaviour
 {
@@ -10,6 +17,9 @@ public class FieldGenerator : MonoBehaviour
     private int columns;
     [SerializeField]
     private GameObject prefab;
+
+    [SerializeField]
+    private GameObjectEvent OnCreated;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,6 +31,7 @@ public class FieldGenerator : MonoBehaviour
                 var brick = Instantiate(prefab);
                 var renderer = brick.GetComponent<Renderer>();
                 brick.transform.position = transform.position + (Vector3.right * renderer.bounds.size.x * x) + (Vector3.down * renderer.bounds.size.y * y);
+                OnCreated?.Invoke(brick);
             }
         }
     }
