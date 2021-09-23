@@ -70,6 +70,13 @@
     <Compile Include="Assets\EventOnTrigger.cs" />
     <Compile Include="Assets\Destructor.cs" />
     <Compile Include="Assets\FireBall.cs" />
+    <Compile Include="Assets\EventOnDestroy.cs" />
+    <Compile Include="Assets\EnableComponents.cs" />
+    <Compile Include="Assets\InitialVelocity2D.cs" />
+    <Compile Include="Assets\ObjectSpawner.cs" />
+    <Compile Include="Assets\ScaleAdjuster.cs" />
+    <Compile Include="Assets\Resizer.cs" />
+    <Compile Include="Assets\FieldManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

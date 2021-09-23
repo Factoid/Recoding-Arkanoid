@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4753924351092709933}
   - component: {fileID: 4753924351092709931}
   - component: {fileID: 4753924351092709932}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,6 +60,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -84,6 +85,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &4753924351092709938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +153,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4753924351092709932}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Destruct
         m_Mode: 1
         m_Arguments:
@@ -162,6 +165,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 4753924351092709932}
+        m_TargetAssemblyTypeName: 
         m_MethodName: DestructOther
         m_Mode: 0
         m_Arguments:
@@ -187,3 +191,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03dc1627deaa51f409bd8315aef73df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagsToIgnore:
+  - Wall

@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 203165077216159068}
   - component: {fileID: 8039454156427432453}
   - component: {fileID: 9042319106500335039}
-  m_Layer: 0
+  - component: {fileID: 2367179589017276924}
+  - component: {fileID: 369745723686361963}
+  m_Layer: 7
   m_Name: Brick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,6 +52,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -97,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03dc1627deaa51f409bd8315aef73df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagsToIgnore: []
 --- !u!114 &203165077216159068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,18 +133,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5431097814617568972}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Destruct
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 203165077216159068}
-        m_MethodName: AdjustValue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -166,3 +160,70 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.05, y: 1}
   m_Direction: 1
+--- !u!114 &2367179589017276924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5431097814617568973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c61badb68ab7b8468330061a231e7e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 203165077216159068}
+        m_TargetAssemblyTypeName: ScoreAdjuster, Assembly-CSharp
+        m_MethodName: AdjustValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 369745723686361963}
+        m_TargetAssemblyTypeName: ObjectSpawner, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &369745723686361963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5431097814617568973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54055baf4c1aca478b12530487b5dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entries:
+  - weight: 1
+    prefab: {fileID: 5431097814617568973, guid: cb4f2ee7efc6eea4ab82db27f6a9affc,
+      type: 3}
+    spawnPoint: {fileID: 5431097814617568977}
+  - weight: 4
+    prefab: {fileID: 0}
+    spawnPoint: {fileID: 0}
+  - weight: 1
+    prefab: {fileID: 5431097814617568973, guid: f4966294735700f459258ac5a02fb6b6,
+      type: 3}
+    spawnPoint: {fileID: 5431097814617568977}
+  - weight: 1
+    prefab: {fileID: 5431097814617568973, guid: 28d03a796d8ffac44be4e7e2ff97c989,
+      type: 3}
+    spawnPoint: {fileID: 5431097814617568977}

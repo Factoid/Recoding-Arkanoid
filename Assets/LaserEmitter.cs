@@ -9,8 +9,15 @@ public class LaserEmitter : MonoBehaviour
     [SerializeField]
     public List<Transform> spawnPoints;
 
+    private void Awake()
+    {
+        enabled = false;    
+    }
+
     public void Shoot()
     {
+        if (!enabled) return;
+
         foreach( var t in spawnPoints )
         {
             var shot = Instantiate(prefab);

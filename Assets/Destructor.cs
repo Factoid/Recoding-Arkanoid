@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Destructor : MonoBehaviour
 {
+    [SerializeField]
+    private List<string> tagsToIgnore = new List<string>();
+
     public void Destruct()
     {
         Destroy(gameObject);
@@ -11,6 +14,8 @@ public class Destructor : MonoBehaviour
 
     public void DestructOther( GameObject obj )
     {
+        if (tagsToIgnore.Contains(obj.tag)) return;
+
         Destroy(obj);
     }
 }
